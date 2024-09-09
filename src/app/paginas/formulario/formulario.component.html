@@ -1,0 +1,46 @@
+<div class="centered-container">
+  <div class="flex-column gap-2">
+    <p-floatLabel>
+      <input pInputText id="nome" [(ngModel)]="aluno.nome" />
+      <label for="nome">Nome</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input
+        type="number"
+        pInputText
+        id="idade"
+        [(ngModel)]="aluno.idade"
+        maxlength="2"
+        (keypress)="validateAgeInput($event)"
+      />
+      <label for="idade">Idade</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input
+        type="number"
+        pInputText
+        id="nota"
+        [(ngModel)]="aluno.nota"
+        maxlength="2"
+      />
+      <label for="nota">Nota</label>
+    </p-floatLabel>
+    <div class="btn-container">
+      <p-toast />
+      <p-button
+        label="Voltar"
+        [raised]="true"
+        severity="danger"
+        [routerLink]="['/']"
+      >
+      </p-button>
+      <p-button
+        label="Cadastrar"
+        [raised]="true"
+        severity="success"
+        (click)="cadastrar()"
+      >
+      </p-button>
+    </div>
+  </div>
+</div>

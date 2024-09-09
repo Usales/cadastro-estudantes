@@ -1,0 +1,35 @@
+<div class="title-container">
+  <h3 [ngStyle]="{ color: 'var(--primary-color)' }">Lista de alunos</h3>
+</div>
+
+<div class="centered-container">
+  <div class="card table-container">
+
+    <p-table [value]="alunos" [tableStyle]="{ 'min-width': '40rem' }" [scrollable]="true" scrollHeight="380px">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Nome</th>
+          <th>nota</th>
+          <th>Idade</th>
+          <th>Situação</th>
+          <th>Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-aluno>
+        <tr>
+          <td>{{ aluno.nome }}</td>
+          <td>{{ aluno.nota }}</td>
+          <td>{{ aluno.idade }}</td>
+          <td>{{ aluno.situacao }}</td>
+          <td>
+            <p-button icon="pi pi-eye" [rounded]="true" [routerLink]="['/visualizar',aluno.id]"></p-button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<div class="btn-container">
+  <p-button label="Cadastrar" [raised]="true" [routerLink]="['/formulario']"></p-button>
+</div>

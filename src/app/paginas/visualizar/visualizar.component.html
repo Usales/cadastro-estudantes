@@ -1,0 +1,54 @@
+<div class="centered-container">
+  <div class="flex-column gap-2">
+    <p-floatLabel>
+      <input pInputText id="nome" [ngModel]="aluno?.nome" disabled="true"/>
+      <label for="nome">Nome</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input
+        type="number"
+        pInputText
+        id="idade"
+        [ngModel]="aluno?.idade"
+        disabled="true"
+      />
+      <label for="idade">Idade</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input
+        type="number"
+        pInputText
+        id="nota"
+        [ngModel]="aluno?.nota"
+        disabled="true"
+      />
+      <label for="nota">Nota</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input
+        pInputText
+        id="situacao"
+        [ngModel]="aluno?.situacao"
+        disabled="true"
+      />
+      <label for="nota">Situação</label>
+    </p-floatLabel>
+    <div class="btn-container">
+      <p-toast />
+      <p-button
+        label="Voltar"
+        [raised]="true"
+        severity="success"
+        [routerLink]="['/']"
+      >
+      </p-button>
+      <p-button
+        label="Excluir"
+        [raised]="true"
+        severity="danger"
+        (click)="excluirAluno()"
+      >
+      </p-button>
+    </div>
+  </div>
+</div>
